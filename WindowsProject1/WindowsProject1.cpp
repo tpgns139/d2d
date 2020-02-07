@@ -70,7 +70,7 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
     wcex.cbSize = sizeof(WNDCLASSEX);
 
     wcex.style          = CS_HREDRAW | CS_VREDRAW;
-    wcex.lpfnWndProc    = WndProc;
+    wcex.lpfnWndProc    = (WNDPROC)WndProc;
     wcex.cbClsExtra     = 0;
     wcex.cbWndExtra     = 0;
     wcex.hInstance      = hInstance;
@@ -149,9 +149,15 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             // TODO: 여기에 hdc를 사용하는 그리기 코드를 추가합니다...
 			RENDER->getRenderTarget()->BeginDraw();
 			RENDER->getRenderTarget()->Clear(D2D1::ColorF(D2D1::ColorF::Blue));
+			IMAGEMANAGER->addImage("test", "../test.png");
+			//IMAGEMANAGER->findImage("test")->render(0, 0, 200, 200,90);
+			IMAGEMANAGER->addFrameImage("frameTest", "../frameTest.png",15,1);
+			IMAGEMANAGER->findImage("frameTest")->frameRender(50, 50, 100, 100,90, 1,0);
 			RENDER->getRenderTarget()->EndDraw();
             EndPaint(hWnd, &ps);
+			
         }
+
         break;
     case WM_DESTROY:
         PostQuitMessage(0);

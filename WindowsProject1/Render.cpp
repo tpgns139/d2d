@@ -21,6 +21,12 @@ void Render::initalizeD2D()
 	hr = ::D2D1CreateFactory(D2D1_FACTORY_TYPE_SINGLE_THREADED,
 		&_D2DFactory);
 	assert(hr == S_OK);
+	//--------------------------------------
+	//Windows Imagind Component Factory »ý¼º
+	//--------------------------------------
+	hr = ::CoCreateInstance(CLSID_WICImagingFactory, NULL, CLSCTX_INPROC_SERVER, IID_PPV_ARGS(&_WICFactory));
+	assert(hr == S_OK);
+	
 }
 
 void Render::createRenderTarget(HWND hWnd)

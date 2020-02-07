@@ -19,6 +19,9 @@
     <Filter Include="2DGameFramework\SingleTone">
       <UniqueIdentifier>{a0e68bfe-756a-4736-b4c1-37df7b1afe3c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="2DGameFramework\Image">
+      <UniqueIdentifier>{96926100-7a6e-4a9a-bf9a-50a433918626}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -42,6 +45,12 @@
     <ClInclude Include="SingleTone.h">
       <Filter>2DGameFramework\SingleTone</Filter>
     </ClInclude>
+    <ClInclude Include="ImageManager.h">
+      <Filter>2DGameFramework\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="Image.h">
+      <Filter>2DGameFramework\Image</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -55,6 +64,12 @@
     </ClCompile>
     <ClCompile Include="Render.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageManager.cpp">
+      <Filter>2DGameFramework\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="Image.cpp">
+      <Filter>2DGameFramework\Image</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -5,7 +5,10 @@
 
 #pragma once
 #pragma comment(lib,"d2d1.lib")
+#pragma comment(lib,"WindowsCodecs.lib")
 #include "targetver.h"
+
+#include<wincodec.h>
 #include<d2d1.h>
 #include<d2d1helper.h>
 #include<assert.h>
@@ -22,10 +25,25 @@
 #include <malloc.h>
 #include <memory.h>
 #include <tchar.h>
+#include <string>
+#include<unordered_map>
 
 // 여기서 프로그램에 필요한 추가 헤더를 참조합니다.
 #include"SingleTone.h"
 #include"Render.h"
+#include"ImageManager.h"
 
 
 #define RENDER	Render::getSingleton()
+#define IMAGEMANAGER ImageManager::getSingleton()
+
+
+template <typename T>
+inline void SafeRelease(T *&p)
+{
+	if (NULL != p)
+	{
+		p->Release();
+		p = NULL;
+	}
+}
