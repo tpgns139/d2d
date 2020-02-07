@@ -152,7 +152,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			IMAGEMANAGER->addImage("test", "../test.png");
 			//IMAGEMANAGER->findImage("test")->render(0, 0, 200, 200,90);
 			IMAGEMANAGER->addFrameImage("frameTest", "../frameTest.png",15,1);
-			IMAGEMANAGER->findImage("frameTest")->frameRender(50, 50, 100, 100,90, 1,0);
+			IMAGEMANAGER->findImage("frameTest")->frameRender(0, 0, 100, 100,90, 1,0);
+			RENDER->Rectangle(D2D1::RectF(0, 0, 50, 50), D2D1::ColorF(D2D1::ColorF::Black));
 			RENDER->getRenderTarget()->EndDraw();
             EndPaint(hWnd, &ps);
 			

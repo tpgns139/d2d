@@ -12,6 +12,7 @@
 #include<d2d1.h>
 #include<d2d1helper.h>
 #include<assert.h>
+#include<dwrite.h>
 
 
 

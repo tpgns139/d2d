@@ -13,6 +13,7 @@ Image::~Image()
 //					뿌릴 x위치,뿌릴 y위치,너비,높이
 void Image::render(float x, float y, float sizeX, float sizeY)
 {
+	
 	::D2D1_RECT_F dxArea = ::D2D1::RectF(x- sizeX* 0.5f, y- sizeY * 0.5f ,x+ sizeX* 0.5f, y+sizeY * 0.5f);
 
 	using namespace D2D1;
@@ -21,6 +22,8 @@ void Image::render(float x, float y, float sizeX, float sizeY)
 	RENDER->getRenderTarget()->SetTransform( trans);
 
 	RENDER->getRenderTarget()->DrawBitmap(_image, dxArea, 1.0f);
+
+	RENDER->getRenderTarget()->SetTransform(D2D1::Matrix3x2F::Identity());
 }
 //					뿌릴 x위치,뿌릴 y위치,너비,높이
 void Image::render(float x, float y, float sizeX, float sizeY,float Degree)
@@ -34,6 +37,8 @@ void Image::render(float x, float y, float sizeX, float sizeY,float Degree)
 	RENDER->getRenderTarget()->SetTransform(rot * trans);
 
 	RENDER->getRenderTarget()->DrawBitmap(_image, dxArea, 1.0f);
+
+	RENDER->getRenderTarget()->SetTransform(D2D1::Matrix3x2F::Identity());
 }
 
 void Image::frameRender(float x, float y, float sizeX, float sizeY,int frameX,int frameY)
@@ -61,6 +66,8 @@ void Image::frameRender(float x, float y, float sizeX, float sizeY,int frameX,in
 		D2D1_BITMAP_INTERPOLATION_MODE_LINEAR, 
 		frameRect
 	);
+
+	RENDER->getRenderTarget()->SetTransform(D2D1::Matrix3x2F::Identity());
 }
 
 void Image::frameRender(float x, float y, float sizeX, float sizeY, float Degree, int frameX, int frameY)
@@ -89,4 +96,6 @@ void Image::frameRender(float x, float y, float sizeX, float sizeY, float Degree
 		D2D1_BITMAP_INTERPOLATION_MODE_LINEAR,
 		frameRect
 	);
+
+	RENDER->getRenderTarget()->SetTransform(D2D1::Matrix3x2F::Identity());
 }

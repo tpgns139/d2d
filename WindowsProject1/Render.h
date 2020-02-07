@@ -25,5 +25,7 @@ public:
 	ID2D1Bitmap* getBitmap() { return _D2DBitmap; }
 
 
+	void Rectangle(D2D1_RECT_F rc,D2D1_COLOR_F color);
+
 };
 

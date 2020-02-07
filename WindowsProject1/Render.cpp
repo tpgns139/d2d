@@ -53,3 +53,11 @@ void Render::initRenderTager(HWND hWnd)
 	RENDER->initalizeD2D();
 	RENDER->createRenderTarget(hWnd);
 }
+
+void Render::Rectangle(D2D1_RECT_F rc, D2D1_COLOR_F color)
+{
+	ID2D1SolidColorBrush *brush = 0;
+	_D2DRenderTaget->CreateSolidColorBrush(color, &brush);
+	_D2DRenderTaget->DrawRectangle(rc, brush);
+	RENDER->getRenderTarget()->SetTransform(D2D1::Matrix3x2F::Identity());
+}

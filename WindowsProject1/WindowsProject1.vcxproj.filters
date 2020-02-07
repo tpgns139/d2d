@@ -39,9 +39,6 @@
     <ClInclude Include="Main.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Render.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="SingleTone.h">
       <Filter>2DGameFramework\SingleTone</Filter>
     </ClInclude>
@@ -49,6 +46,9 @@
       <Filter>2DGameFramework\Image</Filter>
     </ClInclude>
     <ClInclude Include="Image.h">
+      <Filter>2DGameFramework\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="Render.h">
       <Filter>2DGameFramework\Image</Filter>
     </ClInclude>
   </ItemGroup>
@@ -62,13 +62,13 @@
     <ClCompile Include="Main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Render.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="ImageManager.cpp">
       <Filter>2DGameFramework\Image</Filter>
     </ClCompile>
     <ClCompile Include="Image.cpp">
+      <Filter>2DGameFramework\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="Render.cpp">
       <Filter>2DGameFramework\Image</Filter>
     </ClCompile>
   </ItemGroup>
